@@ -1,0 +1,46 @@
+    static boolean isAnagram(String a, String b) {
+        // Complete the function
+            boolean ana = false;
+        if(a.length() == b.length()){
+            int k = 0;
+            int acounter;
+            int i = 0;
+               
+            while(k < a.length()){
+                char fl = a.charAt(k);
+               // System.out.println(fl);
+                acounter = 0;
+                i = 0;
+                //System.out.println("new " + acounter + " of " + fl);
+                while(i < a.length()){
+                    if(fl == a.charAt(i)){
+                        acounter++;
+                    }
+                    i++;
+                }
+                int j=0;
+                int bcounter = 0;
+                while(j < b.length()){
+                    if(fl == b.charAt(j)){
+                        bcounter++;
+                    }
+                    j++;
+                }
+                //System.out.println(acounter);
+                //System.out.println(fl);
+                //System.out.println(bcounter);
+                //System.out.println(fl);
+                if(acounter != bcounter){
+                    ana = false;
+                    return ana;
+                }
+                else{
+                    ana = true;
+                }
+                k++;
+                i++;
+            }
+          ana = true;
+       }
+       return ana;
+    }
