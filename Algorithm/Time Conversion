@@ -13,7 +13,46 @@ public class Solution {
         /*
          * Write your code here.
          */
-
+        int hr = 0;
+        
+        if(s.charAt(8) == 'P'){
+            
+            if(s.charAt(0) == '1' && s.charAt(1) == '2'){
+                return s.substring(0,8);
+                
+            }
+            else{
+                hr = Integer.parseInt(s.substring(0,2));
+                hr += 12;
+                String newHr = new Integer(hr).toString();
+                String newTime = newHr + s.substring(2,8);
+                //newTime.replace('P','A');
+                return newTime;
+            }
+        }
+        else {
+            String nayaWaqt = "";
+            String hour = "";
+            if(s.charAt(8) == 'A'){
+                if(s.charAt(0) == '1' && s.charAt(1) == '2'){
+                    //hr = Integer.parseInt(s.substring(0,2));
+                    //hr = 00;
+                    hour = "00";
+                    //String newHr = new Integer(hr).toString();
+                    nayaWaqt = hour + s.substring(2,8);
+                    System.out.println(nayaWaqt);
+                    return nayaWaqt;
+                }
+                else{
+                    nayaWaqt = s.substring(0,8);
+                    return nayaWaqt;
+                }
+                    
+            }
+        }
+        
+                //System.out.println("outside loop " + s);
+         return s;
     }
 
     private static final Scanner scan = new Scanner(System.in);
