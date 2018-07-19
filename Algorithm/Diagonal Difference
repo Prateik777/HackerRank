@@ -9,9 +9,28 @@ import java.util.regex.*;
 public class Solution {
 
     // Complete the diagonalDifference function below.
-    static int diagonalDifference(int[][] arr) {
+    static int diagonalDifference(int[][] a) {
+    int diff = 0;
+    int priDia = 0;
+    int secDia = 0;
+        for(int i = 0, j = 0; i < a.length; i++, j++){
+            System.out.println(a[i][i]);
+            System.out.println("*******");
+            priDia += a[i][j];
+           //Sstem.out.println(sum);
+        }
+        for(int x = a.length - 1,y=0; y < a.length; x--, y++){
+            System.out.println(a[x][y]);
+            System.out.println("*******");
+            System.out.println("*******");
 
-
+            secDia += a[x][y];
+            //System.out.println(sum);
+            diff = Math.abs(priDia - secDia);
+            
+        }
+//     System.out.println(sum);   
+    return diff;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -22,19 +41,19 @@ public class Solution {
         int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-        int[][] arr = new int[n][n];
+        int[][] a = new int[n][n];
 
         for (int i = 0; i < n; i++) {
-            String[] arrRowItems = scanner.nextLine().split(" ");
+            String[] aRowItems = scanner.nextLine().split(" ");
             scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
             for (int j = 0; j < n; j++) {
-                int arrItem = Integer.parseInt(arrRowItems[j]);
-                arr[i][j] = arrItem;
+                int aItem = Integer.parseInt(aRowItems[j]);
+                a[i][j] = aItem;
             }
         }
 
-        int result = diagonalDifference(arr);
+        int result = diagonalDifference(a);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();
