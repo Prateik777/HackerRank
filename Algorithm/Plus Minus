@@ -10,8 +10,23 @@ public class Solution {
 
     // Complete the plusMinus function below.
     static void plusMinus(int[] arr) {
-
-
+        float positiveNum = 0;
+        float negativeNum = 0;
+        float zeros = 0;
+        
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] == 0)
+                zeros++;
+            else if(arr[i] > 0)
+                positiveNum++;
+            else
+                negativeNum++;
+        }
+        
+        System.out.println(positiveNum / arr.length);
+        System.out.println(negativeNum / arr.length);
+        System.out.println(zeros / arr.length);
+        
     }
 
     private static final Scanner scanner = new Scanner(System.in);
